@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/Article-one',function (req,res){
-    res.send('Article-one requested and will be served here');
+    res.send('flipkART requested and will be served here');
     });
     
 app.get('/Article-two',function (req,res){
