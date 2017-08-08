@@ -23,7 +23,7 @@ var articleOne = {
                     LookO is the best website for online saloon booking
                   </p>`    
 };
-function CreatTemplate(data)
+function CreateTemplate(data)
 {
     var title= data.title;
     var heading= data.heading;
@@ -64,7 +64,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/Article-one',function (req,res){
-    res.send(creatTemplate(Articleone));
+    res.send(createTemplate(Articleone));
     });
     
 app.get('/Article-two',function (req,res){
