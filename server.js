@@ -5,12 +5,65 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+
+var articleOne = {
+    title:'Article one i ruturaj gargi',
+    heading:'Article one',
+    content:`   
+                  <p>
+                    LookO is the best website for online saloon booking.
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                  </p>
+                  <p>
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                  </p>`    
+};
+function CreatTemplate (data){
+    var title=data.title;
+    var heading=data.heading;
+    var content=data.content;
+
+
+var htmlTemplate=`
+<html>
+    <head>
+        <title>
+           ${title}
+        </title>
+         <link href="/ui/style.css" rel="stylesheet" />
+        
+        
+    </head>
+        <body>
+            <div class="container">
+            <div>
+                <a href="/">home</a>
+            </div>
+            <hr/>
+            <h3>
+                ${heading}
+            </h3>
+            <div>
+                ${content}
+            </div>
+            </div>
+        </body>
+            </html>
+    
+`;
+return htmlTemplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/Article-one',function (req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'Article-one.html'));
+    res.send(createTemplate(Articleone));
     });
     
 app.get('/Article-two',function (req,res){
