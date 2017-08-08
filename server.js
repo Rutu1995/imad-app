@@ -6,8 +6,8 @@ var app = express();
 app.use(morgan('combined'));
 
 
-
-var articleOne = {
+var articles ={
+   'Article-one' :{
     title:'Article one i ruturaj gargi',
     heading:'Article one',
     content:`   
@@ -22,6 +22,42 @@ var articleOne = {
                     LookO is the best website for online saloon booking
                     LookO is the best website for online saloon booking
                   </p>`    
+},
+    'Article-two':{
+   
+    title:'Article Two i ruturaj gargi',
+    heading:'Article Two',
+    content:`   
+                  <p>
+                    LookO is the best website for online saloon booking.
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                  </p>
+                  <p>
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                  </p>`    
+
+
+},
+     'Article-three' : {
+    title:'Article Three i ruturaj gargi',
+    heading:'Article Three',
+    content:`   
+                  <p>
+                    LookO is the best website for online saloon booking.
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                  </p>
+                  <p>
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                    LookO is the best website for online saloon booking
+                  </p>`    
+}
 };
 
 function CreateTemplate(data)
@@ -64,18 +100,14 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/Article-one',function (req,res){
+app.get('/:articleName',function (req,res){
+    //articleName ==article-one
+    //articles[articleName]=={} content object for article one
+    var articleName=req.params.articleName;
     res.send(CreateTemplate(articleOne));
     });
     
-app.get('/Article-two',function (req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'Article-two.html'));
-    });
-    
-app.get('/Article-three',function (req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'Article-three.html'));
-    });
-    
+
     
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
