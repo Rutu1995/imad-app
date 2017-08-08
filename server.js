@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 
 
-var createTemplate = {
+var Article-One = {
     title:'Article one i ruturaj gargi',
     heading:'Article one',
     content:`   
