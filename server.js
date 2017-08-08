@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 
 
-var Article-One = {
+var ArticleOne = {
     title:'Article one i ruturaj gargi',
     heading:'Article one',
     content:`   
