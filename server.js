@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 
 
-var ArticleOne = {
+var articleOne = {
     title:'Article one i ruturaj gargi',
     heading:'Article one',
     content:`   
@@ -23,6 +23,7 @@ var ArticleOne = {
                     LookO is the best website for online saloon booking
                   </p>`    
 };
+
 function CreateTemplate(data)
 {
     var title= data.title;
@@ -64,7 +65,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/Article-one',function (req,res){
-    res.send(createTemplate(articleOne));
+    res.send(CreateTemplate(articleOne));
     });
     
 app.get('/Article-two',function (req,res){
