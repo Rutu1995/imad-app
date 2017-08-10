@@ -8,7 +8,7 @@ app.use(morgan('combined'));
 
 var articles ={
    'Article-one' :{
-    title:'Article one i ruturaj gargi',
+    tittle:'Article one i ruturaj gargi',
     heading:'Article one',
     content:`   
                   <p>
@@ -25,7 +25,7 @@ var articles ={
 },
     'Article-two':{
    
-    title:'Article Two i ruturaj gargi',
+    tittle:'Article Two i ruturaj gargi',
     heading:'Article Two',
     content:`   
                   <p>
@@ -62,7 +62,7 @@ var articles ={
 
 function CreateTemplate(data)
 {
-    var title= data.title;
+    var tittle= data.tittle;
     var heading= data.heading;
     var content= data.content;
 
@@ -71,7 +71,7 @@ var htmlTemplate=`
 <html>
     <head>
         <title>
-           ${title}
+           ${tittle}
         </title>
          <link href="/ui/style.css" rel="stylesheet" />
         
